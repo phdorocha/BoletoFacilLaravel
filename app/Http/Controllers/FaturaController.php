@@ -189,7 +189,7 @@ class FaturaController extends Controller
     public function GerarBoleto($Fatura)
     {
         $paramURL = http_build_query(['fatura' => $Fatura->id]);
-        $this->notificationUrl = 'https://webservices.sidsolucoes.com.br/retornoboletos.gravar?'.$paramURL;
+        $this->notificationUrl = 'https://api.seuservidor.com.br/retornoboletos.gravar?'.$paramURL;
         $Parametros = array(
             'token'                      => Config('boletofacil.token'),
             'description'                => 'Mensalidade Easy {mes_ano_anterior}',
